@@ -46,7 +46,6 @@ const userObject = {
 
 const onInput = (Event) => {
     Event.preventDefault();
-    console.log(userObject);
     userObject.email = email.value;
     userObject.message = message.value;
     save(keyObj, userObject);
