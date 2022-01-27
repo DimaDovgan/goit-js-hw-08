@@ -4,4 +4,4 @@ var t=arguments[3],n="Expected a function",e=NaN,i="[object Symbol]",r=/^\s+|\s+
 },{}],"TTyb":[function(require,module,exports) {
 const e=require("lodash.throttle"),t=document.querySelector("form.feedback-form"),r=document.querySelector("input[name=email]"),a=document.querySelector("textarea[name=message]"),o="feedback-form-state",s=(e,t)=>{try{const a=JSON.stringify(t);localStorage.setItem(e,a)}catch(r){console.error("Set state error: ",r.message)}},l=e=>{try{const r=localStorage.getItem(e);return null===r?void 0:JSON.parse(r)}catch(t){console.error("Get state error: ",t.message)}},c=e=>{try{localStorage.removeItem(e)}catch(t){console.error("Get state error: ",t.message)}};void 0!==l(o)&&(r.value=l(o).email,a.value=l(o).message);const m={email:"",message:""},n=e=>{e.preventDefault(),m.email=r.value,m.message=a.value,s(o,m)},u=e=>{e.preventDefault(),console.log(l(o)),r.value="",a.value="",c(o)};t.addEventListener("input",e(n,500)),t.addEventListener("submit",u);
 },{"lodash.throttle":"FNyO"}]},{},["TTyb"], null)
-//# sourceMappingURL=/parcel-project-template/03-feedback.1a4afe46.js.map
+//# sourceMappingURL=/goit-js-hw-08/03-feedback.1a4afe46.js.map
