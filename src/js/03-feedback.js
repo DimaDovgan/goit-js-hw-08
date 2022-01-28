@@ -33,11 +33,18 @@ const remove = key => {
 }
 
 
-if (load(keyObj) !== undefined) {
-    
-    email.value = load(keyObj).email;
-    message.value = load(keyObj).message;
-} 
+
+const renderingText = () => {
+  
+  if (load(keyObj)) {
+      
+      email.value = load(keyObj).email;
+      message.value = load(keyObj).message;
+  } 
+}
+renderingText();
+
+
 
 const userObject = {
     email: "",
@@ -45,9 +52,14 @@ const userObject = {
 }
 
 const onInput = (Event) => {
-    Event.preventDefault();
-    userObject.email = email.value;
-    userObject.message = message.value;
+  Event.preventDefault();
+  //це крутіший варік 
+  let nameIn = Event.target.name;
+  userObject[nameIn] = Event.target.value;
+  console.log(userObject);
+
+    // userObject.email = email.value;
+    // userObject.message = message.value;
     save(keyObj, userObject);
     
 }
